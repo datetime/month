@@ -1,7 +1,7 @@
 {
   "name": "month",
-  "description": "Get the name and number of the current month. Or get the name of the month for a given number.",
-  "version": "0.1.0",
+  "description": "Get the name or number of the current month or any month of the year.",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/month",
   "author": {
     "name": "Jon Schlinkert",
@@ -14,21 +14,10 @@
   "bugs": {
     "url": "https://github.com/jonschlinkert/month/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/month/blob/master/LICENSE-MIT"
-    }
-  ],
-  "keywords": [
-    "docs",
-    "documentation",
-    "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
-  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/month/blob/master/LICENSE-MIT"
+  },
   "main": "index.js",
   "engines": {
     "node": ">=0.8"
@@ -36,9 +25,21 @@
   "scripts": {
     "test": "mocha -R spec"
   },
+  "dependencies": {
+    "is-number": "^0.1.1",
+    "months": "^0.1.0"
+  },
   "devDependencies": {
-    "verb": "~0.2.0",
-    "chai": "~1.9.1",
-    "mocha": "~1.18.2"
-  }
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "calendar",
+    "date",
+    "dates",
+    "day",
+    "days",
+    "month",
+    "name"
+  ]
 }
