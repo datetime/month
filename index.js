@@ -5,26 +5,23 @@
  * Licensed under the MIT license.
  */
 
-module.exports = function (num) {
-  var month = Number(num || new Date().getMonth());
+var isNumber = require('is-number');
+var months = require('months');
 
-  var months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
+module.exports = function month(num) {
+  var mo = new Date().getMonth();
 
-  return {
-    num: month,
-    name: months[month - 1]
+  if (typeof num === 'undefined') {
+    return mo;
   }
+
+  if (isNumber(+num)) {
+    return months[num - 1];
+  }
+
+  if (typeof num !== 'string') {
+    throw new Error('[months] expects a string or number, but got: ' + num);
+  }
+
+  return months.indexOf(num) + 1;
 };
