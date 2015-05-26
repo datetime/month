@@ -59,14 +59,14 @@ $ npm i -d && npm test
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/month/issues/new)
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/datetime/month/issues/new)
 
 ## Author
 
 **Jon Schlinkert**
 
-+ [github/jonschlinkert](https://github.com/jonschlinkert)
-+ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
++ [github/datetime](https://github.com/datetime)
++ [twitter/datetime](http://twitter.com/datetime)
 
 ## License
 
