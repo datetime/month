@@ -1,27 +1,38 @@
 /**
  * month <https://github.com/jonschlinkert/month>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Copyright (c) 2015 Jon Schlinkert.
  * Licensed under the MIT license.
  */
 
+var repeat = require('repeat-string');
 var isNumber = require('is-number');
 var months = require('months');
 
-module.exports = function month(num) {
+module.exports = function month(val) {
   var mo = new Date().getMonth();
-
-  if (typeof num === 'undefined') {
+  if (typeof val === 'undefined') {
     return mo;
   }
 
-  if (isNumber(+num)) {
-    return months[num - 1];
+  // moment conventions
+  if (typeof val === 'string') {
+    if (val === 'M') {
+      return mo;
+    }
+    if (val === 'MM') {
+      return repeat('0', 2 - String(mo).length) + mo;
+    }
+    if (val === 'MMM') {
+      return months.abbr[mo];
+    }
+    if (val === 'MMMM') {
+      return months[mo];
+    }
   }
 
-  if (typeof num !== 'string') {
-    throw new Error('[months] expects a string or number, but got: ' + num);
+  if (isNumber(+val)) {
+    return months[val - 1];
   }
-
-  return months.indexOf(num) + 1;
+  return months.indexOf(val) + 1;
 };
